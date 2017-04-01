@@ -8,7 +8,11 @@ angular.module('app.routes', ['ionicUIRouter'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'profileCtrl'
+    })
 
       .state('tabsController.profile', {
     url: '/profile',
@@ -39,6 +43,15 @@ angular.module('app.routes', ['ionicUIRouter'])
       }
     }
   })
+    .state('tabsController.eventDetails', {
+      url: '/event-detials',
+      views: {
+        'tab3': {
+          templateUrl: 'templates/eventDetails.html',
+          controller: 'eventDetailsCtrl'
+        }
+      }
+    })
 
   /*
     The IonicUIRouter.js UI-Router Modification is being used for this route.
@@ -53,16 +66,17 @@ angular.module('app.routes', ['ionicUIRouter'])
       /tabs/tab1/home
       /tabs/tab4/home
   */
+
   .state('tabsController.home', {
     url: '/home',
     views: {
       'tab1': {
         templateUrl: 'templates/home.html',
-        controller: 'homeCtrl'
+        controller: 'AddCtrl'
       },
       'tab4': {
         templateUrl: 'templates/home.html',
-        controller: 'homeCtrl'
+        controller: 'AddCtrl'
       }
     }
   })
@@ -73,15 +87,7 @@ angular.module('app.routes', ['ionicUIRouter'])
     abstract:true
   })
 
-  .state('tabsController.login', {
-    url: '/login',
-    views: {
-      'tab4': {
-        templateUrl: 'templates/login.html',
-        controller: 'loginCtrl'
-      }
-    }
-  })
+
 
   .state('tabsController.search', {
     url: '/search',
@@ -102,26 +108,24 @@ angular.module('app.routes', ['ionicUIRouter'])
       }
     }
   })
+    .state('tabsController.newFollowUp', {
+      url: '/new-follow-up',
+      views: {
+        'tab5': {
+          templateUrl: 'templates/newFollowUp.html',
+          controller: 'AddCtrl'
+        }
+      }
+    })
 
-  .state('newFollowUp', {
-    url: '/new-follow-up',
-    templateUrl: 'templates/newFollowUp.html',
-    controller: 'newFollowUpCtrl'
-  })
-
-  .state('eventDetails', {
-    url: '/event-detials',
-    templateUrl: 'templates/eventDetails.html',
-    controller: 'eventDetailsCtrl'
-  })
 
   .state('followUpDetails', {
-    url: '/follow-up-details',
+    url: '/follow-up-detials',
     templateUrl: 'templates/followUpDetails.html',
     controller: 'followUpDetailsCtrl'
   })
 
-$urlRouterProvider.otherwise('/tabs/events')
+$urlRouterProvider.otherwise('/tabs/tab1/home')
 
 
 
