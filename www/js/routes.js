@@ -7,8 +7,12 @@ angular.module('app.routes', ['ionicUIRouter'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-  
+
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'profileCtrl'
+    })
 
       .state('tabsController.profile', {
     url: '/profile',
@@ -40,7 +44,7 @@ angular.module('app.routes', ['ionicUIRouter'])
     }
   })
 
-  /* 
+  /*
     The IonicUIRouter.js UI-Router Modification is being used for this route.
     To navigate to this route, do NOT use a URL. Instead use one of the following:
       1) Using the ui-sref HTML attribute:
@@ -53,6 +57,7 @@ angular.module('app.routes', ['ionicUIRouter'])
       /tabs/tab1/home
       /tabs/tab4/home
   */
+
   .state('tabsController.home', {
     url: '/home',
     views: {
@@ -73,15 +78,7 @@ angular.module('app.routes', ['ionicUIRouter'])
     abstract:true
   })
 
-  .state('tabsController.login', {
-    url: '/login',
-    views: {
-      'tab4': {
-        templateUrl: 'templates/login.html',
-        controller: 'loginCtrl'
-      }
-    }
-  })
+
 
   .state('tabsController.search', {
     url: '/search',
@@ -102,12 +99,15 @@ angular.module('app.routes', ['ionicUIRouter'])
       }
     }
   })
-
-  .state('newFollowUp', {
-    url: '/new-follow-up',
-    templateUrl: 'templates/newFollowUp.html',
-    controller: 'newFollowUpCtrl'
-  })
+    .state('tabsController.newFollowUp', {
+      url: '/new-follow-up',
+      views: {
+        'tab5': {
+          templateUrl: 'templates/newFollowUp.html',
+          controller: 'AddCtrl'
+        }
+      }
+    })
 
   .state('eventDetails', {
     url: '/event-detials',
@@ -121,8 +121,8 @@ angular.module('app.routes', ['ionicUIRouter'])
     controller: 'followUpDetailsCtrl'
   })
 
-$urlRouterProvider.otherwise('/tabs/events')
+$urlRouterProvider.otherwise('/tabs/tab1/home')
 
-  
+
 
 });
