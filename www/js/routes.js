@@ -80,6 +80,15 @@ angular.module('app.routes', ['ionicUIRouter'])
       }
     }
   })
+    .state('tabsController.followUpDetails', {
+      views: {
+        'tab1': {
+          url: '/follow-up-details',
+          templateUrl: 'templates/followUpDetails.html',
+          controller: 'followUpDetailsCtrl'
+        }
+      }
+    })
 
   .state('tabsController', {
     url: '/tabs',
@@ -119,11 +128,7 @@ angular.module('app.routes', ['ionicUIRouter'])
     })
 
 
-  .state('followUpDetails', {
-    url: '/follow-up-detials',
-    templateUrl: 'templates/followUpDetails.html',
-    controller: 'followUpDetailsCtrl'
-  })
+
 
 $urlRouterProvider.otherwise('/tabs/tab1/home')
 
