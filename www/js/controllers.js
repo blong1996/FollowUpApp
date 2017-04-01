@@ -16,7 +16,7 @@ function ($scope, $stateParams, $state) {
 
 
 .controller('AddCtrl', function($scope, $state, $cordovaCamera ) {
-
+var change = false;
 
   // Returns all photos in app
   $scope.caption
@@ -29,10 +29,15 @@ function ($scope, $stateParams, $state) {
 
   }
 
+
+  $scope.$on('$ionicView.loaded', function(event) {
+    if (change)
+    document.getElementById("home-card1").style.display = "block";
+  });
   $scope.change = function() {
-    document.getElementById("name").value= 'Hal Marz';
-    document.getElementById("name").placeholder = '';
+
   }
+
 
   $scope.takePhoto = function() {
 
@@ -49,6 +54,7 @@ function ($scope, $stateParams, $state) {
     }).then(function(imageData) {
       console.log(imageData);
       $scope.imgURI = imageData;
+      change = true;
       document.getElementById("name").value= 'Hal Marz';
       document.getElementById("name").placeholder = '';
       document.getElementById("company").value= 'Google';

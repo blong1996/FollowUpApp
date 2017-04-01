@@ -43,6 +43,15 @@ angular.module('app.routes', ['ionicUIRouter'])
       }
     }
   })
+    .state('tabsController.eventDetails', {
+      url: '/event-detials',
+      views: {
+        'tab3': {
+          templateUrl: 'templates/eventDetails.html',
+          controller: 'eventDetailsCtrl'
+        }
+      }
+    })
 
   /*
     The IonicUIRouter.js UI-Router Modification is being used for this route.
@@ -63,11 +72,11 @@ angular.module('app.routes', ['ionicUIRouter'])
     views: {
       'tab1': {
         templateUrl: 'templates/home.html',
-        controller: 'homeCtrl'
+        controller: 'AddCtrl'
       },
       'tab4': {
         templateUrl: 'templates/home.html',
-        controller: 'homeCtrl'
+        controller: 'AddCtrl'
       }
     }
   })
@@ -109,11 +118,6 @@ angular.module('app.routes', ['ionicUIRouter'])
       }
     })
 
-  .state('eventDetails', {
-    url: '/event-detials',
-    templateUrl: 'templates/eventDetails.html',
-    controller: 'eventDetailsCtrl'
-  })
 
   .state('followUpDetails', {
     url: '/follow-up-detials',
