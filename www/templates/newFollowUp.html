@@ -1,30 +1,26 @@
 <ion-view title="New Follow Up" id="page7">
   <ion-content padding="true" class="has-header">
-    <button id="newFollowUp-button5" class="button button-royal  button-block">Scan Card</button>
+    <button id="newFollowUp-button5" class="button button-royal  button-block" ng-click="takePhoto()">Scan Card</button>
     <form id="newFollowUp-form6" class="list">
       <label class="item item-input item-floating-label" id="newFollowUp-input17" name="Title">
         <span class="input-label">Name</span>
-        <input type="text" placeholder="Name">
+        <input type="text" id="name" placeholder="Name">
       </label>
       <label class="item item-input item-floating-label" id="newFollowUp-input18" name="Company">
         <span class="input-label">Company</span>
-        <input type="text" placeholder="Company">
+        <input type="text" id="company"placeholder="Company">
       </label>
       <label class="item item-input item-floating-label" id="newFollowUp-input22" name="Email">
         <span class="input-label">Email</span>
-        <input type="email" placeholder="Email">
+        <input type="email" id="email" placeholder="Email">
       </label>
       <label class="item item-input item-floating-label" id="newFollowUp-input23" name="Number">
         <span class="input-label">Number</span>
-        <input type="tel" placeholder="Number">
-      </label>
-      <label class="item item-input item-floating-label" id="newFollowUp-input26" name="Number">
-        <span class="input-label">Number</span>
-        <input type="tel" placeholder="Number">
+        <input type="tel" id="number" placeholder="Number">
       </label>
       <label class="item item-input item-floating-label" id="newFollowUp-input25" name="Notes">
         <span class="input-label">Notes</span>
-        <input type="text" placeholder="Notes">
+        <input type="text" id="notes" placeholder="Notes">
       </label>
       <a ui-sref="tabsController.home_tab1" id="newFollowUp-button6" class="button button-royal  button-block">Save</a>
     </form>
