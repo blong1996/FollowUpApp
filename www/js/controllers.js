@@ -30,10 +30,9 @@ var change = false;
   }
 
 
-  $scope.$on('$ionicView.loaded', function(event) {
-    if (change)
-    document.getElementById("home-card1").style.display = "block";
-  });
+  $scope.update = function() {
+      document.getElementById("home-card19").style.display = "block";
+  }
   $scope.change = function() {
 
   }

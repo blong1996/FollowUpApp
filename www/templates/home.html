@@ -1,6 +1,25 @@
-<ion-view title="Home" id="page12" style="background-color:#E2E2E4;color:#4169e1">
+
+<ion-view title="Home" id="page12" style="background-color:#E2E2E4;color:#4169e1" ng-controller="AddCtrl">
+
+
   <ion-content padding="true" class="has-header">
-    <div class="list card" id="home-card22">
+  <img src=>
+    <div class="list card" id="home-card19" style="display:none;">
+      <ion-item class="item-avatar" id="home-list-item9">
+        <h2>Hal Marz</h2>
+        <p>Google</p>
+      </ion-item>
+      <div class="item item-body" id="home-list-item-container2">
+        <div id="home-markdown2" style="text-align:right;" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong>1 minute ago </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="list card" id="home-card22" >
       <a ui-sref="tabsController.followUpDetails" style="text-decoration: none">
       <ion-item class="item-avatar" id="home-list-item6">
         <h2>Jacob Jackson</h2>
@@ -15,7 +34,8 @@
       </div>
       </a>
     </div>
-    <div class="list card" id="home-card21">
+
+    <div class="list card" id="home-card21" ng-click="update()">
       <ion-item class="item-avatar" id="home-list-item9">
         <h2>Sarah Bonds</h2>
         <p>Apple</p>
